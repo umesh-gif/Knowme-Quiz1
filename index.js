@@ -1,7 +1,7 @@
 const chalk= require("chalk");
 var readline =require("readline-sync");
 
-console.log("Welcome to quiz on popular show \"Doraemon \"");
+console.log("Welcome to Game \"How better u know me\"");
 var name=readline.question("Enter Your Name :");
 console.log("Welcome ",name,"!.....\n");
 score =0;
@@ -17,26 +17,31 @@ top=[
 ]
 ques=[
   {
-    q:"Who is the only female character in the show whom nobita likes very much?\na)Ran\nb)Christine\nc)shizuka\nd)Miyoko",
-    ans:"c"
+    q:"What is my age? :",
+    ans:"23"
   },
   {
-    q:"What is the color of Dorami, Doraemon's sister?\na)pink\nb)orange\nc)purple\nd)yellow",
-    ans:"d"
+    q:"Which sport i like? :",
+    ans:"cricket"
   },
   {
-    q:"What is Gian passion?\na)dancing\nb)karate\nc)sumo\nd)singing",
-    ans:"d",
+    q:"What is my dog name? :",
+    ans:"Don't have dog",
   },
   {
-  q:"What marks usuallly scored by nobita in tests?\na)100\nb)0\nc)25\nd)50",
-  ans:"b"
+  q:"I vaccinated with 2 doses? :",
+  ans:"yes"
+  },
+  {
+    q:"I live in which country at present? :",
+    ans:"india",
+    act:"Past,Present in India."
   }
 ]
 function ask(quest,answ,i)
 {
-  console.log("Question ",i,"\n",quest);
-  var read=readline.question("\nAns :");
+  console.log("Question ",i);
+  var read=readline.question(quest);
   if(read.toUpperCase()==answ.toUpperCase())
   {
     console.log("Yes,you are "+chalk.green("Right!..."));
@@ -51,7 +56,7 @@ function ask(quest,answ,i)
     console.log("Actual answer :",answ);
     score=score-1;
   }
-  console.log("Current score :",score,"\n_______________");
+  console.log("Current score :",score,"\n_______________\n");
 }
 
 for(i=0;i<ques.length;i=i+1)
@@ -62,7 +67,7 @@ for(i=0;i<ques.length;i=i+1)
 console.log("Final score :",score);
 if(score<top[0].sc)
 {
-  console.log("You are not top scorer,Watch Doaremon its fun!....");
+  console.log("You are not top scorer,Lets meet!...");
   console.log("Cureent top scorer:",top[0].name,"\n",top[0].name,"Score:",top[0].sc);
 }
 else
@@ -72,6 +77,6 @@ if(score===top[0].sc)
 }
 else
 {
-  console.log("Congrats!,You score top in the list,Cartooniee.");
+  console.log("Congrats!,You score top in the list,Stop knowing more about me now.");
 }
 console.log("Thank You for playing...................")
